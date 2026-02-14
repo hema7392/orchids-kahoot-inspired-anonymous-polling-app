@@ -3,17 +3,15 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useGame } from '@/lib/game-context';
-import { Question } from '@/lib/game-store';
 import {
-  ArrowLeft, Copy, Users, Play, BarChart3, Plus, Trash2, Edit3, Check, X,
+  ArrowLeft, Copy, Users, Play, BarChart3, Plus, Trash2, Check, X,
   Settings, ChevronDown, ChevronUp, Sparkles
 } from 'lucide-react';
 
 export default function HostDashboard() {
-  const { state, goToScreen, startGame, showResults, addQuestion, updateQuestion, deleteQuestion, resetGame } = useGame();
+  const { state, goToScreen, startGame, showResults, addQuestion, deleteQuestion, resetGame } = useGame();
   const [copied, setCopied] = useState(false);
   const [showAddForm, setShowAddForm] = useState(false);
-  const [editingId, setEditingId] = useState<string | null>(null);
   const [newQ, setNewQ] = useState({ text: '', options: ['', '', '', ''], timeLimit: 20 });
   const [expandedQ, setExpandedQ] = useState<string | null>(null);
 
